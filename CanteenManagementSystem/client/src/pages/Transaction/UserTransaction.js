@@ -24,9 +24,8 @@ const UserTransaction = () => {
         <table className="table">
             <thead>
                 <tr>
-                <th scope="col">productName</th>
-                <th scope="col">status</th>
-                
+                <th className="text-success" scope="col">Product Name</th>
+                <th className="text-success" scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>

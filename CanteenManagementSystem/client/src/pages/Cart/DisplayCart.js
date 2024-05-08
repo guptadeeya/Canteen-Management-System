@@ -3,6 +3,7 @@ import AuthContext from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import {useDispatch} from 'react-redux';
 import {removeCart} from '../../Redux/CartSlice'
+
 const DisplayCart = () => {
   const dispatch=useDispatch();
   
@@ -103,12 +104,11 @@ const DisplayCart = () => {
     <div className="container">
       <table className="table">
         <thead>
-          <tr>
-            <th scope="col">Product Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Remove Cart</th>
-         
+          <tr className="m-5">
+            <th className="text-success" scope="col">Product Name</th>
+            <th className="text-success" scope="col">Price</th>
+            <th className="text-success" scope="col">Quantity</th>
+            <th className="text-success" scope="col">Remove Cart</th>
           </tr>
         </thead>
         <tbody>
@@ -134,8 +134,8 @@ const DisplayCart = () => {
             )}
         </tbody>
       </table>
-      <h1>Total: Rs: {calculateTotalPrice().toFixed(2)}</h1>
-      <button className="btn btn-primary" onClick={handlePurchase}>Checkout</button>
+      <h1 className="text-success">Total:- Rs. {calculateTotalPrice().toFixed(2)}</h1>
+      <button className="btn btn-success" onClick={handlePurchase}>Checkout</button>
     </div>
   )
 }

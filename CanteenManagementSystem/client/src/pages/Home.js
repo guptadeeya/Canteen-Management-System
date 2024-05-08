@@ -127,7 +127,7 @@ const Home = () => {
     <div id='back'>
     <div className="container">
         <div className="row">
-          <h1>Today's Menu</h1>
+          <h1 className='text-success mt-2'>Today's Menu</h1>
           {foods.map((food) => {
             const foodRatings = ratingInfo.filter((info) => info.foodId === food._id);
             const totalRating = foodRatings.reduce((sum, info) => sum + info.rating, 0);
