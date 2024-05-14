@@ -139,73 +139,94 @@ const Home = () => {
       <div id="back">
         <div className="container">
           <div className="row">
-            <h1>Today's Menu</h1>
-            {foods.map((food) => {
-              const foodRatings = ratingInfo.filter(
-                (info) => info.foodId === food._id
-              );
-              const totalRating = foodRatings.reduce(
-                (sum, info) => sum + info.rating,
-                0
-              );
-              const averageRating =
-                foodRatings.length > 0 ? totalRating / foodRatings.length : 0;
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <h1>Today's Menu</h1>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+              }}
+            >
+              {foods.map((food) => {
+                const foodRatings = ratingInfo.filter(
+                  (info) => info.foodId === food._id
+                );
+                const totalRating = foodRatings.reduce(
+                  (sum, info) => sum + info.rating,
+                  0
+                );
+                const averageRating =
+                  foodRatings.length > 0 ? totalRating / foodRatings.length : 0;
 
-              return (
-                <div className="col-md-4" key={food._id}>
-                  <div className="card my-2" id="cardInfo">
-                    <img
-                      src={`http://localhost:4000/ItemImage/${food.filename}`}
-                      width="413px"
-                      height="300px"
-                      alt=""
-                    />
-                    <h3>Item Name: {food.name}</h3>
-                    <p className="mx-2">Food Description: {food.description}</p>
-                    <b className="mx-2">Price: Rs {food.price}</b>
-                    <p className="mx-2">Estimated time: {food.time}</p>
-                    <p className="mx-2 text-success">Status: {food.status}</p>
-                    {/* Display the average rating */}
-                    <DisplayStar star={averageRating} />
-                    <p className="mx-5">Reviews: {foodRatings.length}</p>
-                    <div style={{ display: "flex" }}>
-                      <button
-                        className="btn btn-primary"
-                        style={{ width: "150px" }}
-                        onClick={() => {
-                          handleView(food._id);
-                        }}
+                return (
+                  <div className="mx-1" key={food._id}>
+                    <div
+                      className="card my-2"
+                      id="cardInfo"
+                      onClick={() => {
+                        handleView(food._id);
+                      }}
+                    >
+                      <img
+                        src={`http://localhost:4000/ItemImage/${food.filename}`}
+                        width="313px"
+                        height="230px"
+                        alt=""
+                      />
+                      <h3>Item Name: {food.name}</h3>
+                      <p className="mx-2">
+                        Food Description: {food.description}
+                      </p>
+                      <b className="mx-2">Price: Rs {food.price}</b>
+                      <p className="mx-2">Estimated time: {food.time}</p>
+                      <p className="mx-2 text-success">Status: {food.status}</p>
+                      {/* Display the average rating */}
+                      <DisplayStar star={averageRating} />
+                      <p className="mx-5">Reviews: {foodRatings.length}</p>
+                      <div
+                        className="mb-1"
+                        style={{ display: "flex", justifyContent: "center" }}
                       >
-                        View Item
-                      </button>
-                      {authenticated ? (
-                        role !== "admin" &&
-                        role !== "staff" &&
-                        food.status !== "unavailable" &&
-                        role === "customer" ? (
+                        <button
+                          className="btn btn-primary"
+                          style={{ width: "150px" }}
+                          onClick={() => {
+                            handleView(food._id);
+                          }}
+                        >
+                          View Item
+                        </button>
+                        {authenticated ? (
+                          role !== "admin" &&
+                          role !== "staff" &&
+                          food.status !== "unavailable" &&
+                          role === "customer" ? (
+                            <button
+                              className="btn btn-success mx-2"
+                              style={{ width: "150px" }}
+                              onClick={() => {
+                                handleCart(food);
+                              }}
+                            >
+                              Place Order
+                            </button>
+                          ) : null
+                        ) : (
                           <button
                             className="btn btn-success mx-2"
-                            style={{ width: "150px" }}
-                            onClick={() => {
-                              handleCart(food);
-                            }}
+                            onClick={handleClick}
                           >
                             Place Order
                           </button>
-                        ) : null
-                      ) : (
-                        <button
-                          className="btn btn-success mx-2"
-                          onClick={handleClick}
-                        >
-                          Place Order
-                        </button>
-                      )}
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
           {error && <div>{error}</div>}
         </div>
