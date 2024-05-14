@@ -1,21 +1,8 @@
 import React, { useState, useContext } from "react";
-import {
-  Link,
-  NavLink,
-  Outlet,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Search from "../../Search/Search";
 import { useSelector } from "react-redux";
 import AuthContext from "../../context/AuthContext";
-import {
-  AiFillHome,
-  AiOutlineShoppingCart,
-  AiOutlineSearch,
-} from "react-icons/ai";
-import { IoIosNotifications } from "react-icons/io";
-import { FaHistory } from "react-icons/fa";
 
 const UserNav = () => {
   const { setAuthenticated } = useContext(AuthContext);
@@ -115,9 +102,9 @@ const UserNav = () => {
 
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
           <div class="container-fluid">
-            <a class="navbar-brand" href="/">
+            <Link class="navbar-brand" href="/">
               QuickBite
-            </a>
+            </Link>
             <button
               class="navbar-toggler"
               type="button"
@@ -143,11 +130,6 @@ const UserNav = () => {
               </form>
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <Link class="nav-link active" aria-current="page" to="/about">
-                    About
-                  </Link>
-                </li>
-                <li class="nav-item">
                   <Link class="nav-link" to="/displayCart">
                     Cart - {cartItem.length}
                   </Link>
@@ -162,18 +144,31 @@ const UserNav = () => {
                     History
                   </Link>
                 </li>
+                <li class="nav-item">
+                  <Link class="nav-link" aria-current="page" to="/about">
+                    About
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  {/* <Link class="nav-link" to="/userTransaction">
+                    History
+                  </Link> */}
+                  <button className="btn btn-dark mx-2" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
         </nav>
       </div>
 
-      {/* <main>
+      <main>
         <Outlet />
         {location.pathname === "/searchFood" && (
           <Search searchResult={searchResult} />
         )}
-      </main> */}
+      </main>
     </>
   );
 };
