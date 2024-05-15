@@ -14,7 +14,7 @@
   display: inline-block;
   margin: 3px;
   text-align: center;
-  float: right;
+  /* float: right; */
 }
 
 #list li a{
@@ -28,8 +28,4 @@
   background-color: rgb(146, 214, 170);
   color: black;
   border-radius: 10px;
-}
-
-.about h2{
-  color: rgb(78, 130, 71);
 }

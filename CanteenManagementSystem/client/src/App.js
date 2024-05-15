@@ -69,15 +69,19 @@ const NavElement = () => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<NavElement />}>
+      {/* Global Routes */}
       <Route index element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/signUp" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
-      <Route path="admin/addFood" element={<AddFood />} />
-      <Route path="admin/updateFood/:id" element={<UpdateFood />} />
-      <Route path="/logout" element={<Logout />} />
+      <Route path="/signUp" element={<SignUp />} />
+      <Route path="/about" element={<About />} />
+
+      {/* <Route path="/logout" element={<Logout />} /> */}
+
+      {/* User Routes */}
       <Route path="/displayFood" element={<DisplayFood />} />
+      <Route path="/foodDetails/:id" element={<FoodDetails />} />
       <Route path="/displayCart" element={<DisplayCart />} />
+
       <Route path="/khalti" element={<KhaltiPayment />} />
       <Route path="/searchFood" element={<Search />} />
       <Route path="/notification" element={<Notification />} />
@@ -88,12 +92,15 @@ const router = createBrowserRouter(
       <Route path="/khaltiPayment" element={<KhaltiPayment />} />
       <Route path="/paymentPage/:id" element={<PaymentPage />} />
       <Route path="/viewUser" element={<ViewUser />} />
-      <Route path="/foodDetails/:id" element={<FoodDetails />} />
       <Route path="/viewTransaction" element={<ViewTransaction />} />
       <Route path="/userTransaction" element={<UserTransaction />} />
       <Route path="/updateOrder/:id" element={<UpdateOrder />} />
       <Route path="/userNotification" element={<UserNotification />} />
       <Route path="/star" element={<Star />} />
+
+      {/* Admin Routes */}
+      <Route path="admin/addFood" element={<AddFood />} />
+      <Route path="admin/updateFood/:id" element={<UpdateFood />} />
       <Route path="/adminDash" element={<AdminDash />} />
     </Route>
   )
