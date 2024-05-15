@@ -179,7 +179,7 @@ const Home = () => {
                       <p className="mx-2">
                         Food Description: {food.description}
                       </p>
-                      <b className="mx-2">Price: Rs {food.price}</b>
+                      <b className="mx-2">Price: Rs{food.price}</b>
                       <p className="mx-2">Estimated time: {food.time}</p>
                       <p className="mx-2 text-success">Status: {food.status}</p>
                       {/* Display the average rating */}
