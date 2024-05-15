@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div class="container about">
+    <div class="container">
       <h2 className="mt-4">Welcome to QuickBite!</h2>
       <p>
         We are proud to serve the students, faculty, and staff of our college
