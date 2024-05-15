@@ -161,36 +161,37 @@ const Home = () => {
                   foodRatings.length > 0 ? totalRating / foodRatings.length : 0;
 
                 return (
-                  <div className="mx-1" key={food._id}>
+                  <div className="mx-2" key={food._id}>
                     <div
                       className="card my-2"
                       id="cardInfo"
                       onClick={() => {
                         handleView(food._id);
                       }}
+                      style={{ width: "19rem" }}
                     >
                       <img
                         src={`http://localhost:4000/ItemImage/${food.filename}`}
-                        width="313px"
+                        // width="302px"
                         height="230px"
                         alt=""
                       />
-                      <h3>Item Name: {food.name}</h3>
-                      <p className="mx-2">
-                        Food Description: {food.description}
-                      </p>
+                      <h3 className="mx-2">{food.name}</h3>
+                      <p className="mx-2">Description: {food.description}</p>
                       <b className="mx-2">Price: Rs{food.price}</b>
                       <p className="mx-2">Estimated time: {food.time}</p>
                       <p className="mx-2 text-success">Status: {food.status}</p>
                       {/* Display the average rating */}
-                      <DisplayStar star={averageRating} />
-                      <p className="mx-5">Reviews: {foodRatings.length}</p>
+                      <div className="mx-2">
+                        <DisplayStar star={averageRating} />
+                      </div>
+                      <p className="mx-2">Reviews: {foodRatings.length}</p>
                       <div
                         className="mb-1"
                         style={{ display: "flex", justifyContent: "center" }}
                       >
                         <button
-                          className="btn btn-primary"
+                          className="btn btn-primary mx-2"
                           style={{ width: "150px" }}
                           onClick={() => {
                             handleView(food._id);
