@@ -6,9 +6,9 @@ const GuestNav = () => {
     <>
       <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">
+          <Link class="navbar-brand" href="/">
             QuickBite
-          </a>
+          </Link>
           <button
             class="navbar-toggler"
             type="button"
