@@ -82,14 +82,12 @@ const router = createBrowserRouter(
       <Route path="/foodDetails/:id" element={<FoodDetails />} />
       <Route path="/displayCart" element={<DisplayCart />} />
 
-      <Route path="/khalti" element={<KhaltiPayment />} />
+      {/* <Route path="/khalti" element={<KhaltiPayment />} /> */}
       <Route path="/searchFood" element={<Search />} />
       <Route path="/notification" element={<Notification />} />
-      <Route path="/orders" element={<Orders />} />
-      <Route path="/displayUser" element={<DisplayUser />} />
       <Route path="/updateUser/:id" element={<UpdateUser />} />
       <Route path="/success" element={<SuccessPage />} />
-      <Route path="/khaltiPayment" element={<KhaltiPayment />} />
+      {/* <Route path="/khaltiPayment" element={<KhaltiPayment />} /> */}
       <Route path="/paymentPage/:id" element={<PaymentPage />} />
       <Route path="/viewUser" element={<ViewUser />} />
       <Route path="/viewTransaction" element={<ViewTransaction />} />
@@ -102,6 +100,9 @@ const router = createBrowserRouter(
       <Route path="admin/addFood" element={<AddFood />} />
       <Route path="admin/updateFood/:id" element={<UpdateFood />} />
       <Route path="/adminDash" element={<AdminDash />} />
+      {/* nested routes under adminDash */}
+      <Route path="/displayUser" element={<DisplayUser />} />
+      <Route path="/orders" element={<Orders />} />
     </Route>
   )
 );

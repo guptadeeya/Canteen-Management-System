@@ -53,12 +53,6 @@ const StaffNav = () => {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link active" to="/ViewTransaction">
-                  View Transaction
-                </Link>
-              </li>
-
-              <li class="nav-item">
                 <button className="btn btn-dark mx-2" onClick={handleLogout}>
                   Logout
                 </button>
