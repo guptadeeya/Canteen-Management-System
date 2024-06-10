@@ -44,62 +44,6 @@ const UserNav = () => {
   return (
     <>
       <div>
-        {/* <div className="container">
-          <div className="row">
-            <div className="col-md-2" id="logo">
-              <h1>QuickBite</h1>
-            </div>
-            <div className="col-md-10">
-              <ul id="list">
-                <li>
-                  <NavLink to="/">
-                    <AiFillHome />
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/about">About</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/displayCart">
-                    <AiOutlineShoppingCart />
-                    {cartItem.length}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/userNotification">
-                    <IoIosNotifications />
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/userTransaction">
-                    <FaHistory />
-                  </NavLink>
-                </li>
-
-                <li>
-                  <form onSubmit={handleSubmit}>
-                    <div className="d-flex">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="search"
-                        onChange={(e) => setSearchItem(e.target.value)}
-                        value={searchItem}
-                      />
-                      <button className="btn btn-primary ">
-                        <AiOutlineSearch />
-                      </button>
-                    </div>
-                  </form>
-                </li>
-                <button className="btn btn-dark mx-2" onClick={handleLogout}>
-                  Logout
-                </button>
-              </ul>
-            </div>
-          </div>
-        </div> */}
-
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
           <div class="container-fluid">
             <Link class="navbar-brand" href="/">

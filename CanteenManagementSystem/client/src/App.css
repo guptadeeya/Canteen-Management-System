@@ -29,3 +29,12 @@
   color: black;
   border-radius: 10px;
 }
+
+.about h2{
+  color: rgb(78, 130, 71);
+}
+
+.logout:hover{
+  color: white;
+  background-color: aquamarine;
+}
